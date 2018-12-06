@@ -1,7 +1,7 @@
 #!/bin/bash
 
-
 set -e
+set -x
 
 docker run --rm \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -9,4 +9,4 @@ docker run --rm \
     -v $HOME/Shared:/home/user/Shared \
     -e DISPLAY=unix$DISPLAY \
     --device /dev/snd \
-    signal
+    dustindecker/signal
